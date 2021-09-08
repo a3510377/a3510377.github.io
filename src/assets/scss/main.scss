@@ -5,16 +5,25 @@
 }
 html,
 body {
-    // overflow: hidden;
     background-color: var(--styleMode-background-color) !important;
     color: var(--styleMode-color) !important;
     margin: 0;
 }
-/*  */
-.test {
-    background: linear-gradient(6deg, rgba(233, 0, 192, 1) 12%, rgba(255, 255, 0, 0.8) 81%);
+
+html {
+    overflow: -moz-hidden-unscrollable;
+    height: 100%;
 }
 
+body {
+    -ms-overflow-style: none;
+    height: 100%;
+    width: calc(100vw + 18px);
+    overflow: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
 /* mouse */
 .default {
     cursor: default;

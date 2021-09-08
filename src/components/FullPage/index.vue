@@ -40,11 +40,12 @@ export default {
       // });
       for (let i of $(".fullPage"))
         new IntersectionObserver((e) =>
-          e.map(
-            (e) =>
-              e.isIntersecting &&
-              (document.location.href = `#${$(e.target).attr("id")}`)
-          )
+          e.map((e) => {
+            if (e.isIntersecting) {
+              $(e.target)[0].scrollIntoView();
+              document.location.hash = $(e.target).attr("id");
+            }
+          })
         ).observe(i);
     });
   },

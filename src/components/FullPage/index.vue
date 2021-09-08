@@ -1,5 +1,5 @@
 <template>
-  <slot />
+  <slot class="fullPageMain" />
   <div id="GoUnit">
     <div>
       <ul class="list-Mother">
@@ -17,14 +17,11 @@
 /* eslint-disable no-undef */
 export default {
   name: "GoUnit",
-  methods: {},
-  /*
-  [
-    {
-      "id": "",
-    }
-  ]
-  */
+  methods: {
+    resize() {
+      $("html").css("--html-wrapper-height", `${$(window).height()}px`);
+    },
+  },
   data() {
     return {
       windowHeight: 0,
@@ -34,10 +31,21 @@ export default {
     units: Array,
   },
   mounted() {
+    let _ = this;
     $(function () {
-      $(window).on("resize", function () {
-        console.log($(window).height());
-      });
+      _.resize();
+      $(window).on("resize", _.resize);
+      // $(window).on("scroll", () => {
+      //   console.log("a");
+      // });
+      for (let i of $(".fullPage"))
+        new IntersectionObserver((e) =>
+          e.map(
+            (e) =>
+              e.isIntersecting &&
+              (document.location.href = `#${$(e.target).attr("id")}`)
+          )
+        ).observe(i);
     });
   },
 };
@@ -85,5 +93,11 @@ export default {
       }
     }
   }
+}
+</style>
+<style lang="scss">
+.fullPage {
+  width: 100%;
+  height: var(--html-wrapper-height, 100%);
 }
 </style>

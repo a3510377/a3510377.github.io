@@ -1,22 +1,37 @@
 <template>
   <Header />
-  <GoUnit :units="units">
+  <FullPage :units="units">
     <div class="wrapper">
       <router-view />
+      <section id="awa" class="fullPage">
+        <h1>awa</h1>
+      </section>
+      <section id="awa2" class="fullPage">
+        <h1>awa2</h1>
+      </section>
+      <section id="awa3" class="fullPage">
+        <h1>awa3</h1>
+      </section>
+      <section id="awa4" class="fullPage">
+        <h1>awa4</h1>
+      </section>
+      <section id="awa5" class="fullPage">
+        <h1>awa5</h1>
+      </section>
+      <section id="awa6" class="fullPage">
+        <h1>awa6</h1>
+      </section>
     </div>
-  </GoUnit>
-  <Footer />
+  </FullPage>
 </template>
 
 <script>
-import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import GoUnit from "@/components/GoUnit";
+import FullPage from "@/components/FullPage";
 export default {
   components: {
-    Footer,
     Header,
-    GoUnit,
+    FullPage,
   },
   data() {
     return {
@@ -25,6 +40,26 @@ export default {
           id: "awa",
           name: "awa",
         },
+        {
+          id: "awa2",
+          name: "awa2",
+        },
+        {
+          id: "awa3",
+          name: "awa3",
+        },
+        {
+          id: "awa4",
+          name: "awa4",
+        },
+        {
+          id: "awa5",
+          name: "awa5",
+        },
+        {
+          id: "awa6",
+          name: "awa6",
+        },
       ],
     };
   },
@@ -32,14 +67,10 @@ export default {
 </script>
 
 <style lang="scss">
-html {
-  --html-margin-top: 55px;
-  margin-top: var(--html-margin-top) !important;
-}
 #app {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - var(--html-margin-top, 0px));
+  min-height: 100vh;
   .wrapper {
     flex-grow: 1;
   }

@@ -5,6 +5,7 @@
 }
 html,
 body {
+    // overflow: hidden;
     background-color: var(--styleMode-background-color) !important;
     color: var(--styleMode-color) !important;
     margin: 0;
@@ -176,20 +177,4 @@ body {
         --title-color: rgb(140, 0, 255);
         --href-color: #0089ac;
     }
-}
-
-/* scrollbar */
-::-webkit-scrollbar-thumb {
-    border-radius: 6px;
-    background-color: var(--styleMode-webkit-scrollbar-thumb);
-}
-::-webkit-scrollbar {
-    width: 16px;
-    background-color: var(--styleMode-webkit-scrollbar);
-}
-
-/* selection */
-::selection {
-    background-color: #004daa;
-    color: #e8e6e3;
 }

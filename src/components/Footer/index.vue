@@ -1,31 +1,20 @@
 <template>
-  <div class="Header">
-    <Menu />
-  </div>
+  <div id="Footer"></div>
 </template>
 
 <script>
-import Menu from "./Menu";
 export default {
-  name: "Header",
+  name: "Footer",
   data() {
     return {};
   },
   methods: {},
-  components: {
-    Menu,
-  },
 };
 </script>
 
 <style lang="scss" scoped>
-.Header {
+#Footer {
   background-color: var(--var-theme-background-color);
-  width: 100%;
   height: 50px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 </style>

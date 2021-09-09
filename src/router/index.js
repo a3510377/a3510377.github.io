@@ -3,13 +3,11 @@ import {
   createWebHistory
 } from 'vue-router'
 
-const routes = [
-  /* {
-    path: '/',
-    name: 'Home',
-    component: Home
-  } */
-]
+const routes = [{
+  path: '/',
+  name: 'home-router',
+  component: () => import("@/views/Home.vue")
+}]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

@@ -1,5 +1,5 @@
 <template>
-  <div id="Home">
+  <div id="Home" class="flex flex-center flex-item-center">
     <h1>慢慢寫www</h1>
   </div>
 </template>
@@ -15,4 +15,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#Home {
+  height: 80vh;
+  color: #fff;
+}
 </style>

@@ -24,11 +24,10 @@
 </template>
 
 <script lang="ts" setup>
-import { BackgroundColorProperty } from 'csstype';
 import BaseSection from './BaseSection.vue';
 
 interface linkType {
-  color: BackgroundColorProperty;
+  color: string;
   icon: string;
   title: string;
   url: string;

@@ -6,19 +6,20 @@
         <p>喵~~</p>
         <p>我是一隻在程式海中溺死的猴貓 😣</p>
       </div>
-      <ul class="links">
-        <li
+      <div class="links">
+        <a
           v-for="link in links"
+          v-once
           :key="link.title"
-          :title="link.title"
+          :title="`${link.icon}: ${link.title}`"
           :style="{ backgroundColor: link.color }"
+          :href="link.url"
+          target="_blank"
         >
-          <a :href="link.url" target="_blank">
-            <SvgIcon :name="link.icon" />
-            {{ link.title }}
-          </a>
-        </li>
-      </ul>
+          <SvgIcon :name="link.icon" />
+          <p v-text="link.title" />
+        </a>
+      </div>
     </div>
   </BaseSection>
 </template>
@@ -71,21 +72,30 @@ const links: linkType[] = [
     flex-direction: column;
     align-items: center;
     margin-bottom: 1rem;
+    text-align: center;
   }
 
   .links {
     display: flex;
-    list-style-type: none;
+    width: 500px;
+    align-items: center;
 
-    li {
+    a {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
       padding: 5px 18px 5px 8px;
       margin: 5px;
       border-radius: 12px;
 
-      a {
-        width: 100%;
-        height: 100%;
+      p {
+        margin-left: 10px;
       }
+    }
+    @media all and (max-width: 600px) {
+      flex-direction: column;
+      width: auto;
     }
   }
 }

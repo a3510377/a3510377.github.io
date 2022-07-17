@@ -1,17 +1,16 @@
 <template>
   <div class="repo language">
-    <h1 v-text="repoData.name"></h1>
-    <!-- <div v-for="(value, key) in repoData.languages" :key="value">
-      {{ key }}: {{ value }}
-    </div> -->
-    <div class="languages">
-      <div
-        v-for="(num, lang) in repoData.languages"
-        :key="lang"
-        class="language"
-        :style="{ width: `${(num / codeBytes) * 100}%` }"
-        :class="{ [fixClass(lang.toString().toLocaleLowerCase())]: true }"
-      />
+    <div class="content">
+      <h1 class="name" v-text="repoData.name"></h1>
+      <div class="languages">
+        <div
+          v-for="(num, lang) in repoData.languages"
+          :key="lang"
+          class="language"
+          :style="{ width: `${(num / codeBytes) * 100}%` }"
+          :class="{ [fixClass(lang.toString().toLocaleLowerCase())]: true }"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -45,9 +44,19 @@ const codeBytes = Object.values(props.repoData.languages).reduce(
   justify-content: center;
   flex-direction: column;
 
+  .content {
+    width: 80%;
+    max-width: 800px;
+  }
+
+  .name {
+    margin-bottom: 10px;
+    font-size: 2em;
+  }
+
   .languages {
     display: flex;
-    width: 80%;
+    width: 100%;
 
     .language {
       height: 10px;

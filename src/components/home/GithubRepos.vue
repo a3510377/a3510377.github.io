@@ -38,6 +38,7 @@ onUnmounted(() => removeEventListener('scroll', updateScroll));
 .section-repos {
   display: block;
   height: calc(var(--page-height) * v-bind('repoLen'));
+  background-color: #2d2d33;
 }
 
 .repos {
@@ -52,6 +53,12 @@ onUnmounted(() => removeEventListener('scroll', updateScroll));
     position: sticky;
     top: 0;
     left: 0;
+  }
+
+  .repo {
+    &:nth-child(2n + 1) {
+      background-color: #2f3843;
+    }
   }
 }
 </style>

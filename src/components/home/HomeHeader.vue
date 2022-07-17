@@ -17,7 +17,7 @@ import avatarIcon from '@/assets/images/avatar.png';
 <style lang="scss" scoped>
 header {
   position: absolute;
-  top: 15px;
+  top: 30px;
   left: 40px;
   z-index: 2;
   display: flex;

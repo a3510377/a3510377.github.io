@@ -11,9 +11,9 @@
           v-for="link in links"
           v-once
           :key="link.title"
+          :href="link.url"
           :title="`${link.icon}: ${link.title}`"
           :style="{ backgroundColor: link.color }"
-          :href="link.url"
           target="_blank"
         >
           <SvgIcon :name="link.icon" />
@@ -59,11 +59,17 @@ const links: linkType[] = [
 .tab {
   display: flex;
   width: 80%;
+  min-height: 300px;
+  padding: 20px 0;
+  color: black;
+  background-color: #ababab;
+  border-radius: 12px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     font-size: 2.5rem;
   }
 
@@ -71,7 +77,7 @@ const links: linkType[] = [
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     text-align: center;
   }
 
@@ -81,16 +87,21 @@ const links: linkType[] = [
     align-items: center;
 
     a {
+      position: relative;
       display: flex;
-      align-items: center;
       width: 100%;
       height: 100%;
       padding: 5px 18px 5px 8px;
       margin: 5px;
       border-radius: 12px;
+      align-items: center;
 
       p {
         margin-left: 10px;
+      }
+
+      &:hover {
+        opacity: 0.88;
       }
     }
     @media all and (max-width: 600px) {

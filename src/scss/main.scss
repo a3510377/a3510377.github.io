@@ -1,3 +1,4 @@
+@import "https://use.fontawesome.com/releases/v5.7.1/css/all.css";
 @import "./global.scss";
 @import "./variable.scss";
 
@@ -7,6 +8,9 @@ html {
   height: 100%;
   min-width: 100%;
   min-height: 100%;
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+  background-color: #03111e;
 }
 
 #app-mount {

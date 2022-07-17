@@ -1,5 +1,5 @@
 <template>
-  <BaseSection>
+  <BaseSection class="section-about">
     <div class="tab">
       <h1>About me</h1>
       <div class="content">

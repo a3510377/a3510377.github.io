@@ -4,3 +4,6 @@ export const delay = (ms: number) => {
     setTimeout(resolve, ms);
   });
 };
+
+export const deepCopy = <T extends object | Array<unknown>>(data: T): T =>
+  JSON.parse(JSON.stringify(data));

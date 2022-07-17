@@ -83,6 +83,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@octokit/openapi-types@^12.10.0":
+  version "12.10.0"
+  resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-12.10.0.tgz#60b27456e2e750dae9925ed248b9daad12a12c5c"
+  integrity sha512-xsgA7LKuQ/2QReMZQXNlBP68ferPlqw66Jmx5/J399Cn5EgIDaHXou6Rgn1GkpDNjkPji67fTlC2rz6ABaVFKw==
+
 "@tootallnate/once@2":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
@@ -129,6 +134,11 @@
   integrity sha512-5sP0Xgo0dXppY0tbYF6TevB/1+tzFLuu71XXxC/zGvQAn9PW7y+DwtDO81g0ZUPye00K6tPwtsLDOpARa0mFcA==
   dependencies:
     "@types/node" "*"
+
+"@types/web-bluetooth@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@types/web-bluetooth/-/web-bluetooth-0.0.14.tgz#94e175b53623384bff1f354cdb3197a8d63cdbe5"
+  integrity sha512-5d2RhCard1nQUC3aHcq/gHzWYO6K0WJmAbjO7mQJgCQKtZpgXxv1rOM6O/dBDhDYYVutk1sciOgNSe+5YyfM8A==
 
 "@typescript-eslint/eslint-plugin@^5.0.0", "@typescript-eslint/eslint-plugin@^5.28.0":
   version "5.28.0"
@@ -353,10 +363,32 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.37.tgz#8e6adc3f2759af52f0e85863dfb0b711ecc5c702"
   integrity sha512-4rSJemR2NQIo9Klm1vabqWjD8rs/ZaJSzMxkMNeJS6lHiUjjUeYFbooN19NgFjztubEKh3WlZUeOLVdbbUWHsw==
 
+"@vueuse/core@^8.9.4":
+  version "8.9.4"
+  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-8.9.4.tgz#c7db40f19390b3c9f4ff9294a30461497f62ec19"
+  integrity sha512-B/Mdj9TK1peFyWaPof+Zf/mP9XuGAngaJZBwPaXBvU3aCTZlx3ltlrFFFyMV4iGBwsjSCeUCgZrtkEj9dS2Y3Q==
+  dependencies:
+    "@types/web-bluetooth" "^0.0.14"
+    "@vueuse/metadata" "8.9.4"
+    "@vueuse/shared" "8.9.4"
+    vue-demi "*"
+
 "@vueuse/head@^0.7.6":
   version "0.7.6"
   resolved "https://registry.yarnpkg.com/@vueuse/head/-/head-0.7.6.tgz#39eb2aa593db6f02d10ba469b33d8cfbce038183"
   integrity sha512-cOWqCkT3WiF5oEpw+VVEWUJd9RLD5rc7DmnFp3cePsejp+t7686uKD9Z9ZU7Twb7R/BI8iexKTmXo9D/F3v6UA==
+
+"@vueuse/metadata@8.9.4":
+  version "8.9.4"
+  resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-8.9.4.tgz#a4132db33e4c1b1023636acfa20aa7b37ab3d978"
+  integrity sha512-IwSfzH80bnJMzqhaapqJl9JRIiyQU0zsRGEgnxN6jhq7992cPUJIRfV+JHRIZXjYqbwt07E1gTEp0R0zPJ1aqw==
+
+"@vueuse/shared@8.9.4":
+  version "8.9.4"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-8.9.4.tgz#c9741c30ffb666b50d62f0dd80b76119fd47573e"
+  integrity sha512-wt+T30c4K6dGRMVqPddexEVLa28YwxW5OFIPmzUHICjphfAuBFTTdDoyqREZNDOFJZ44ARH1WWQNCUK8koJ+Ag==
+  dependencies:
+    vue-demi "*"
 
 abab@^2.0.6:
   version "2.0.6"
@@ -530,6 +562,14 @@ atob@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+
+axios@^0.27.2:
+  version "0.27.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.2.tgz#207658cc8621606e586c85db4b41a750e756d972"
+  integrity sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==
+  dependencies:
+    follow-redirects "^1.14.9"
+    form-data "^4.0.0"
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -1665,6 +1705,11 @@ flatted@^3.1.0:
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.5.tgz#76c8584f4fc843db64702a6bd04ab7a8bd666da3"
   integrity sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==
+
+follow-redirects@^1.14.9:
+  version "1.15.1"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.1.tgz#0ca6a452306c9b276e4d3127483e29575e207ad5"
+  integrity sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==
 
 for-in@^1.0.2:
   version "1.0.2"

@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <Section>
     <slot />
-  </section>
+  </Section>
 </template>
 
 <style lang="scss" scoped>
@@ -10,6 +10,6 @@ section {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: var(--page-height);
 }
 </style>

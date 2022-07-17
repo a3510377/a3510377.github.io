@@ -9,8 +9,8 @@
         v-for="(num, lang) in repoData.languages"
         :key="lang"
         class="language"
-        :style="{ width: `${((num / codeBytes) * 100).toFixed(2)}%` }"
-        :class="{ [fixClass(lang.toString())]: true }"
+        :style="{ width: `${(num / codeBytes) * 100}%` }"
+        :class="{ [fixClass(lang.toString().toLocaleLowerCase())]: true }"
       />
     </div>
   </div>
@@ -24,7 +24,9 @@ import type { minimalRepository } from '@/utils/githubRepo';
 const props = defineProps<{ repoData: minimalRepository }>();
 
 const fixClass = (className: string) => {
-  return className.toLocaleLowerCase().replace('c++', 'cpp').replace(' ', '-');
+  const fix: Record<string, string> = { 'c++': 'cpp', 'c#': 'cs' };
+
+  return (fix?.[className] || className).replace(' ', '-');
 };
 
 const codeBytes = Object.values(props.repoData.languages).reduce(
@@ -42,5 +44,26 @@ const codeBytes = Object.values(props.repoData.languages).reduce(
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  .languages {
+    display: flex;
+    width: 80%;
+
+    .language {
+      height: 10px;
+      margin-left: 2px;
+
+      &:first-child {
+        margin-left: initial;
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+    }
+  }
 }
 </style>

@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onMounted, onUnmounted, reactive, watch } from 'vue';
+import { ref, computed, onMounted, onUnmounted, reactive } from 'vue';
 
 import GithubRepo from './GithubRepo.vue';
 import BaseSection from './BaseSection.vue';

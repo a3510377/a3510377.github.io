@@ -526,7 +526,7 @@ $languages_color: (
     position: relative;
     @each $language, $background-color in $languages_color {
       /* stylelint-disable-next-line scss/function-no-unknown */
-      $class-language: str-replace($language, " ", "-");
+      $class-language: to-lower-case(str-replace($language, " ", "-"));
       &.#{$class-language} {
         background-color: $background-color;
 

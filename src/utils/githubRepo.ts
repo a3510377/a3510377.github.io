@@ -48,10 +48,10 @@ export const getRepos = async (
             const aStargazersCount = a.stargazers_count || 0;
             const bStargazersCount = b.stargazers_count || 0;
             if (aStargazersCount < bStargazersCount) return -1;
-
             return aStargazersCount > bStargazersCount ? 1 : 0;
           })
-          .slice(0, count)) {
+          .slice(0, count)
+          .reverse()) {
           const repoData: minimalRepository = {
             ...repo,
             languages: {},

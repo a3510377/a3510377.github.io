@@ -15,7 +15,9 @@ export interface minimalRepository extends BaseMinimalRepository {
 
 const baseAxios = axios.create({
   baseURL: 'https://api.github.com/',
-  headers: { Authorization: 'token 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' },
+  headers: {
+    /*  Authorization: '' */
+  },
 });
 
 export const getRepos = async (

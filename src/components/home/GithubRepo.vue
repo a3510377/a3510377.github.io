@@ -85,6 +85,9 @@ const codeBytes = Object.values(props.repoData.languages).reduce(
     margin-bottom: 20px;
 
     > * {
+      display: flex;
+      align-items: center;
+
       svg {
         margin-right: 4px;
       }

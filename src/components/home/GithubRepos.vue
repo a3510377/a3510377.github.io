@@ -1,5 +1,8 @@
 <template>
-  <BaseSection class="section-repos">
+  <BaseSection
+    class="section-repos"
+    :style="{ height: `calc(var(--page-height) * ${repoLen})` }"
+  >
     <div ref="reposEl" class="repos">
       <GithubRepo v-for="repo in repos" :key="repo.id" :repo-data="repo" />
     </div>
@@ -7,7 +10,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onMounted, onUnmounted, reactive } from 'vue';
+import { ref, computed, onMounted, reactive } from 'vue';
+import { useEventListener, WindowEventName } from '@vueuse/core';
 
 import GithubRepo from './GithubRepo.vue';
 import BaseSection from './BaseSection.vue';
@@ -19,30 +23,27 @@ const data = await getRepos(5, (data) => {
 const repos = reactive<minimalRepository[]>(data);
 const reposEl = ref<HTMLElement>();
 const repoLen = computed(() => repos?.length || 0);
-const appEl = document.documentElement;
 
-const updateScroll = () => {
-  if (!reposEl.value) return;
-
-  reposEl.value.scrollTo({
-    left:
-      (window.innerWidth * (appEl.scrollTop - window.innerHeight)) /
-      window.innerHeight,
-  });
-};
-const events = ['scroll', 'resize'];
+const events: WindowEventName[] = ['scroll', 'resize'];
 onMounted(() => {
-  events.forEach((name) => addEventListener(name, updateScroll));
-});
-onUnmounted(() => {
-  events.forEach((name) => removeEventListener(name, updateScroll));
+  const appEl = document.documentElement;
+
+  events.forEach((name) =>
+    useEventListener(name, () => {
+      if (!reposEl.value) return;
+      reposEl.value.scrollTo({
+        left:
+          (window.innerWidth * (appEl.scrollTop - window.innerHeight)) /
+          window.innerHeight,
+      });
+    })
+  );
 });
 </script>
 
 <style lang="scss" scoped>
 .section-repos {
   display: block;
-  height: calc(var(--page-height) * v-bind('repoLen'));
   background-color: #2d2d33;
 }
 

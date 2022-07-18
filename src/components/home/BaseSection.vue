@@ -1,7 +1,7 @@
 <template>
-  <Section>
+  <section>
     <slot />
-  </Section>
+  </section>
 </template>
 
 <style lang="scss" scoped>

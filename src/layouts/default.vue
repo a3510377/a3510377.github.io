@@ -3,17 +3,17 @@
 </template>
 
 <script lang="ts" setup>
-import { onUnmounted, onMounted } from 'vue';
+import { onMounted } from 'vue';
+import { useEventListener } from '@vueuse/core';
 
-const setStyles = () =>
-  document.documentElement.style.setProperty(
-    '--page-height',
-    `${window.innerHeight}px`
-  );
-
-addEventListener('resize', setStyles);
-onMounted(setStyles);
-onUnmounted(() => removeEventListener('resize', setStyles));
+onMounted(() => {
+  useEventListener('resize', () => {
+    document.documentElement.style.setProperty(
+      '--page-height',
+      `${window.innerHeight}px`
+    );
+  });
+});
 </script>
 
 <style lang="scss" scoped>

@@ -3,7 +3,6 @@
   <AboutMe />
   <Suspense>
     <GithubRepos />
-    <template #fallback> 請稍後 </template>
   </Suspense>
 </template>
 

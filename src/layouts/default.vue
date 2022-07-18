@@ -7,12 +7,14 @@ import { onMounted } from 'vue';
 import { useEventListener } from '@vueuse/core';
 
 onMounted(() => {
-  useEventListener('resize', () => {
+  const setStyle = () => {
     document.documentElement.style.setProperty(
       '--page-height',
       `${window.innerHeight}px`
     );
-  });
+  };
+  setStyle();
+  useEventListener('resize', setStyle);
 });
 </script>
 

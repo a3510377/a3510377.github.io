@@ -45,9 +45,10 @@ onUnmounted(() => removeEventListener('scroll', updateScroll));
   display: flex;
   width: 100%;
   height: var(--page-height);
+  overflow-x: hidden;
+  user-select: none;
   flex-wrap: nowrap;
   justify-content: unset;
-  overflow-x: hidden;
 
   &.sticky {
     position: sticky;

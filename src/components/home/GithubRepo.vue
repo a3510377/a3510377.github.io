@@ -1,7 +1,25 @@
 <template>
   <div class="repo language">
-    <div class="content">
-      <h1 class="name" v-text="repoData.name"></h1>
+    <a class="content" :href="repoData.html_url" target="_blank">
+      <h1 class="name" v-text="repoData.name" />
+      <p
+        class="description"
+        v-text="repoData.description || 'No description'"
+      />
+      <div class="count">
+        <a class="base-language">
+          <SvgIcon name="code" size="25px" color="white" />
+          <span v-text="repoData.language" />
+        </a>
+        <div class="star">
+          <SvgIcon name="star" size="25px" color="white" />
+          <span v-text="repoData.stargazers_count" />
+        </div>
+        <div class="fork">
+          <SvgIcon name="fork" size="25px" color="white" />
+          <span v-text="repoData.forks_count" />
+        </div>
+      </div>
       <div class="languages">
         <div
           v-for="(num, lang) in repoData.languages"
@@ -11,7 +29,7 @@
           :class="{ [fixClass(lang.toString().toLocaleLowerCase())]: true }"
         />
       </div>
-    </div>
+    </a>
   </div>
 </template>
 
@@ -47,11 +65,34 @@ const codeBytes = Object.values(props.repoData.languages).reduce(
   .content {
     width: 80%;
     max-width: 800px;
+    padding: 20px;
+    background-color: #202324;
+    border-radius: 10px;
   }
 
   .name {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 2em;
+  }
+
+  .description {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+  }
+
+  .count {
+    display: flex;
+    margin-bottom: 20px;
+
+    > * {
+      svg {
+        margin-right: 4px;
+      }
+
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+    }
   }
 
   .languages {

@@ -16,7 +16,7 @@ export interface minimalRepository extends BaseMinimalRepository {
 const baseAxios = axios.create({
   baseURL: 'https://api.github.com/',
   headers: {
-    /*  Authorization: '' */
+    /* Authorization: '', */
   },
 });
 
@@ -48,11 +48,10 @@ export const getRepos = async (
             const aStargazersCount = a.stargazers_count || 0;
             const bStargazersCount = b.stargazers_count || 0;
 
-            if (aStargazersCount < bStargazersCount) return -1;
-            return aStargazersCount > bStargazersCount ? 1 : 0;
+            if (aStargazersCount < bStargazersCount) return 1;
+            return aStargazersCount > bStargazersCount ? -1 : 0;
           })
-          .slice(0, count)
-          .reverse()) {
+          .slice(0, count)) {
           const repoData: minimalRepository = {
             ...repo,
             languages: {},
@@ -67,6 +66,7 @@ export const getRepos = async (
               })
               .then((_) => (repoData.languages = <BaseMinimalLanguages>_.data))
           );
+
           repos.push(repoData);
         }
 

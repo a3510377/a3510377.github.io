@@ -12,6 +12,10 @@ html {
   background-color: #03111e;
 }
 
+html {
+  --page-height: 100vh;
+}
+
 #app-mount {
   min-width: 100%;
   min-height: 100%;

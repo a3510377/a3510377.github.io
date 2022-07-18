@@ -34,6 +34,8 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue';
+
 import '@/scss/languages.scss';
 import type { minimalRepository } from '@/utils/githubRepo';
 
@@ -46,10 +48,9 @@ const fixClass = (className: string) => {
   return (fix?.[className] || className).replace(' ', '-');
 };
 
-const codeBytes = Object.values(props.repoData.languages).reduce(
-  (a, b) => a + b,
-  0
-);
+const codeBytes = computed(() => {
+  return Object.values(props.repoData.languages).reduce((a, b) => a + b, 0);
+});
 </script>
 
 <style lang="scss" scoped>

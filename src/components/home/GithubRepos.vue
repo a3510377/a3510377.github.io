@@ -28,16 +28,17 @@ const events: WindowEventName[] = ['scroll', 'resize'];
 onMounted(() => {
   const appEl = document.documentElement;
 
-  events.forEach((name) =>
-    useEventListener(name, () => {
-      if (!reposEl.value) return;
-      reposEl.value.scrollTo({
-        left:
-          (window.innerWidth * (appEl.scrollTop - window.innerHeight)) /
-          window.innerHeight,
-      });
-    })
-  );
+  const updataScroll = () => {
+    if (!reposEl.value) return;
+    reposEl.value.scrollTo({
+      left:
+        (window.innerWidth * (appEl.scrollTop - window.innerHeight)) /
+        window.innerHeight,
+    });
+  };
+
+  updataScroll();
+  events.forEach((name) => useEventListener(name, updataScroll));
 });
 </script>
 

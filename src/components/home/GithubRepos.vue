@@ -1,6 +1,6 @@
 <template>
   <BaseSection class="section-repos">
-    <div ref="reposEl" class="repos" :class="{ sticky }">
+    <div ref="reposEl" class="repos">
       <GithubRepo v-for="repo in repos" :key="repo.id" :repo-data="repo" />
     </div>
   </BaseSection>
@@ -17,17 +17,18 @@ const data = await getRepos(5, (data) => {
   Object.assign(repos, data);
 });
 const repos = reactive<minimalRepository[]>(data);
-const sticky = ref<boolean>();
 const reposEl = ref<HTMLElement>();
 const repoLen = computed(() => repos?.length || 0);
 const appEl = document.documentElement;
 
 const updateScroll = () => {
   if (!reposEl.value) return;
-  const position = appEl.scrollTop - window.innerHeight;
 
-  sticky.value = position < reposEl.value.scrollWidth;
-  reposEl.value.scrollTo({ left: position * 1.24 });
+  reposEl.value.scrollTo({
+    left:
+      (window.innerWidth * (appEl.scrollTop - window.innerHeight)) /
+      window.innerHeight,
+  });
 };
 
 onMounted(() => addEventListener('scroll', updateScroll));
@@ -42,6 +43,8 @@ onUnmounted(() => removeEventListener('scroll', updateScroll));
 }
 
 .repos {
+  position: sticky;
+  top: 0;
   display: flex;
   width: 100%;
   height: var(--page-height);
@@ -49,12 +52,6 @@ onUnmounted(() => removeEventListener('scroll', updateScroll));
   user-select: none;
   flex-wrap: nowrap;
   justify-content: unset;
-
-  &.sticky {
-    position: sticky;
-    top: 0;
-    left: 0;
-  }
 
   .repo {
     &:nth-child(2n + 1) {

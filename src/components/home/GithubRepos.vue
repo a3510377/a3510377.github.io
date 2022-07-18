@@ -30,9 +30,13 @@ const updateScroll = () => {
       window.innerHeight,
   });
 };
-
-onMounted(() => addEventListener('scroll', updateScroll));
-onUnmounted(() => removeEventListener('scroll', updateScroll));
+const events = ['scroll', 'resize'];
+onMounted(() => {
+  events.forEach((name) => addEventListener(name, updateScroll));
+});
+onUnmounted(() => {
+  events.forEach((name) => removeEventListener(name, updateScroll));
+});
 </script>
 
 <style lang="scss" scoped>

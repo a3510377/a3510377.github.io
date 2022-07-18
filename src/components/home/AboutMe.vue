@@ -59,6 +59,7 @@ const links: linkType[] = [
 .tab {
   display: flex;
   width: 80%;
+  max-width: 800px;
   min-height: 300px;
   padding: 20px 0;
   color: black;

@@ -7,10 +7,10 @@
         v-text="repoData.description || 'No description'"
       />
       <div class="count">
-        <a class="base-language">
+        <div class="base-language">
           <SvgIcon name="code" size="25px" color="white" />
           <span v-text="repoData.language" />
-        </a>
+        </div>
         <div class="star">
           <SvgIcon name="star" size="25px" color="white" />
           <span v-text="repoData.stargazers_count" />

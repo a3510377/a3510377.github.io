@@ -1,7 +1,7 @@
 <template>
   <BaseSection
     class="section-repos"
-    :style="{ height: `calc(var(--page-height) * ${repoLen})` }"
+    :style="{ height: `calc(100vh * ${repoLen})` }"
   >
     <div ref="reposEl" class="repos">
       <GithubRepo v-for="repo in repos" :key="repo.id" :repo-data="repo" />
@@ -53,7 +53,7 @@ onMounted(() => {
   top: 0;
   display: flex;
   width: 100%;
-  height: var(--page-height);
+  height: 100vh;
   overflow-x: hidden;
   user-select: none;
   flex-wrap: nowrap;

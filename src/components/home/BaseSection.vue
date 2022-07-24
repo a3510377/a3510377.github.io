@@ -10,6 +10,6 @@ section {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: var(--page-height);
+  height: 100vh;
 }
 </style>

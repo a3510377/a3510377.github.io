@@ -21,7 +21,8 @@
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-ssg": "^0.20.2",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.16"
+    "vue-router": "^4.0.16",
+    "@vueuse/head": "^0.7.9"
   },
   "devDependencies": {
     "@octokit/openapi-types": "^12.10.0",
@@ -29,7 +30,6 @@
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "@vitejs/plugin-vue": "^2.3.3",
-    "@vueuse/head": "^0.7.6",
     "eslint": "^8.18.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",

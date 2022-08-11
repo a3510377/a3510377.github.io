@@ -1,4 +1,5 @@
 <template>
+  <GeneralHead />
   <HomeHeader />
   <AboutMe />
   <Suspense>

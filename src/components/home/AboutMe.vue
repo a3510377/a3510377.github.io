@@ -52,6 +52,12 @@ const links: linkType[] = [
     icon: 'twitter',
     url: 'https://twitter.com/Bod31444120',
   },
+  {
+    color: 'black',
+    title: '侯寓升',
+    icon: 'facebook',
+    url: 'https://www.facebook.com/profile.php?id=100028122045493',
+  },
 ];
 </script>
 

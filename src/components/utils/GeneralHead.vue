@@ -16,7 +16,7 @@
     <meta property="twitter:image" :content="image" />
 
     <meta name="theme-color" content="#ffffff" />
-    <meta property="og:url" content="https://mc-cloud-town.github.io" />
+    <meta property="og:url" content="https://a3510377.github.io/" />
     <meta property="og:type" content="website" />
     <meta property="twitter:card" content="summary_large_image" />
 

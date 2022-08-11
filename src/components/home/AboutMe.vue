@@ -90,7 +90,7 @@ const links: linkType[] = [
 
   .links {
     display: flex;
-    width: 500px;
+    width: 600px;
     align-items: center;
 
     a {
@@ -111,7 +111,7 @@ const links: linkType[] = [
         opacity: 0.88;
       }
     }
-    @media all and (max-width: 600px) {
+    @media all and (max-width: 830px) {
       flex-direction: column;
       width: auto;
     }

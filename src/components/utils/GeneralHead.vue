@@ -41,7 +41,7 @@ const pageTitle = props.pageTitle || '';
 let _title: string | void = void 0;
 if (pageTitle) _title = `猴貓 ニャー~~ | ${pageTitle}`;
 
-const image = props.image || '/logo.png';
+const image = props.image || '/favicon/android-chrome-256x256.png';
 const keywords =
   props.keywords?.join(',') || '侯寓升,猴貓,猴子,猴子#2027,a3510377';
 

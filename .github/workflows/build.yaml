@@ -5,7 +5,7 @@ on:
     branches: [master]
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 1,3,5,6'
+    - cron: '0 0 * * 1,4,6'
 
 jobs:
   deploy:
@@ -36,8 +36,8 @@ jobs:
           git config --global user.email "$user_email"
           git init
           git add -A
-          git commit -m "${{ github.event.head_commit.message }}"
-          git push -f https://_:"$token"@github.com/${{ github.event.repository.full_name }}.git master:gh-pages
+          git commit -m "up: ${{ github.event.head_commit.message }}"
+          git push -f https://_:"$token"@github.com/a3510377/a3510377.github.io.git master:gh-pages
         shell: bash
         env:
           token: ${{ secrets.GITHUB_TOKEN }}

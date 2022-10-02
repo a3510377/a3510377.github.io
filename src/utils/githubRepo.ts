@@ -36,7 +36,7 @@ export const getRepos = async (
     /** @see https://docs.github.com/en/rest/repos/repos#list-repositories-for-a-user */
     oldData.value.repos = await baseAxios
       .get(`https://api.github.com/users/${githubUserName}/repos`, {
-        params: { per_page: 30 },
+        params: { per_page: 100 },
         headers: { Accept: 'application/vnd.github.mercy-preview+json' },
       })
       .then((_): BaseMinimalRepository[] => _.data)

@@ -44,5 +44,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           user_name: GitHub Action
           user_email: action@github.com
-          # cname: monkey-cat.tk
-          cname: none
+          cname: monkey-cat.com
+          # cname: none

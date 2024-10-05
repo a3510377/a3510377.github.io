@@ -56,7 +56,7 @@ const links: linkType[] = [
     color: 'black',
     title: '侯寓升',
     icon: 'facebook',
-    url: 'https://www.facebook.com/profile.php?id=100028122045493',
+    url: 'https://www.facebook.com/profile.php?id=61560925502184',
   },
 ];
 </script>
